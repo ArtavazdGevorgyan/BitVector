@@ -9,10 +9,10 @@ class BitVector:
         """
         self.__arr = np.zeros((length+63)//64, dtype=np.uint64)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"{self.__arr[::-1]}"
 
-    def set(self, index: int):
+    def set(self, index: int) -> None:
         """Changes index of a BitVector to 1
 
         Args:
@@ -20,7 +20,7 @@ class BitVector:
         """
         self.__arr[index // 64] |= np.uint64(1 << (index % 64))
 
-    def reset(self, index: int):
+    def reset(self, index: int) -> None:
         """Changes index of a BitVector to 0
 
         Args:
